@@ -15,7 +15,14 @@ CHIP DMux {
 
     PARTS:
     // Put your code here:
+//Not cria a variavel notSel
     Not (in=sel, out=notSel);
+//Primeiro and serve pra criar a primeira variavel 
+//pois se o in for 1 e o sel for 0, retorna a=1
+//e nos outros casos retorna a=0
     And (a=in, b=notSel, out=a);
+//Segundo serve pra segunda variavel
+//pois se o sel for 1,
+// somente retorna b=1 para quando o in for 1
     And (a=in, b=sel, out=b);
 }

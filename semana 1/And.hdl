@@ -14,7 +14,8 @@ CHIP And {
     OUT out;
 
     PARTS:
-    // Put your code here:
+//É necessario 2 nand pois, o primeiro analiza as duas entradas, 
+//e o segundo corrige o valor do nand pra se igualar ao desejado pelo and.
     Nand (a=a, b=b, out=nandOut);
     Nand (a=nandOut, b=nandOut, out=out);
 }

@@ -15,6 +15,8 @@ CHIP Or {
 
     PARTS:
     // Put your code here:
+//Primeiro inverte os valores de entrada usando o not
+// e depois usa o nand para dar a resposta desejada
     Not (in=a, out=notA);
     Not (in=b, out=notB);
     Nand (a=notA, b=notB, out=out);

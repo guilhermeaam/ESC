@@ -14,5 +14,7 @@ CHIP Not {
 
     PARTS:
     // Put your code here:
+//Um unico nand pois se as entradas forem iguais
+// no nand a saida sera o oposto
     Nand (a=in, b=in, out=out);
 }
