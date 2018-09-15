@@ -1,0 +1,30 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux.hdl
+
+/** 
+ * Multiplexor:
+ * out = a if sel == 0
+ *       b otherwise
+ */
+
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+//Not cria a variavel notSel
+    Not (in=sel, out=notSel);
+//Primeiro and cria a variavel outA, dando o valor de A se o Sel for 0
+//pois se Sel for 0 notSel é 1 assim se A for 1, outA é 1 e se A for 0
+// outA tambem sera 0
+    And (a=a, b=notSel, out=outA);
+//Depois usasse outro and pra criar a variavel outB, dando o valor de B
+// se o Sel for 1, pois se Sel for 1 no and só da valor de saida 1 se tambem for 1
+// e valor 0 se B for 0
+    And (a=b, b=sel, out=outB); 
+//O or serve pra juntar as duas informações acima dando o valor de A ou B dependendo do Sel  
+    Or (a=outA, b=outB, out=out);
+}
